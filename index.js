@@ -1,4 +1,5 @@
 const { fetchMyIP } = require('./fetchMyIP')
+const { fetchCoordsByIP } = require('./iss')
 
 fetchMyIP((error, IP) => {
   if(error){
@@ -6,5 +7,7 @@ fetchMyIP((error, IP) => {
     return;
   }
 
-  console.log('It worked, your IP is: ' + IP)
+  fetchCoordsByIP(IP, (error, obj) => {
+    console.log(obj)
+  })
 })
