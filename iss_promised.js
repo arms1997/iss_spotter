@@ -16,7 +16,7 @@ const fetchISSFlyOverTimes = function (body) {
   return request(`http://api.open-notify.org/iss-pass.json?lat=${latitude}&lon=${longitude}`)
 };
 
-const nextISSTimesForMyLocation = function (callback) {
+const nextISSTimesForMyLocation = function () {
   return fetchMyIP()
   .then(fetchCoordsByIP)
   .then(fetchISSFlyOverTimes)
